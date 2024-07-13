@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 // + Component image của next sẽ tự giảm size của image khi đặt weight và height để nextjs nhận biết
 //  size mong muốn của ta là gì để giảm dung lượng tải.
@@ -15,6 +16,7 @@ export default function Home() {
         height={400}
         quality={100}
       />
+      <Link href="/login">Login</Link>
     </main>
   );
 }
