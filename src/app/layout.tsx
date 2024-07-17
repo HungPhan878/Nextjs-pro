@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Inter } from "next/font/google";
+import { ThemeProvider } from "@/components/theme-provider";
+
+// css
 import "./globals.css";
 
-const roboto = Roboto({
+const inter = Inter({
   subsets: ["vietnamese"],
-  weight: ["100", "300", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -18,10 +20,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={roboto.className}>
-        <header>Header App</header>
-        {children}
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
