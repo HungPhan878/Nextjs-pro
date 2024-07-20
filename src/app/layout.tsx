@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 
 // css
 import "./globals.css";
+import Header from "@/components/header";
 
 const inter = Inter({
   subsets: ["vietnamese"],
@@ -28,7 +29,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <Header />
+          <main>{children}</main>
         </ThemeProvider>
       </body>
     </html>
